@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" /></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js" /></script>
+<script type="text/javascript" src="js/twitch.js"></script>
+</head>
+<body ng-app="myApp">
+	<!-- <div class="containerfluid" ng-controller="myController">
+		<table class="table table-hover">
+			<thead>
+			<tr>
+				<th>Logo</th>
+				<th>Channel Name</th>
+				<th>Status</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="result in results">
+					<td>{{result.game}}</td>
+					<td>{{ result.display_name }}</td>
+					<td>{{result.views}}</td>
+				</tr>
+			</tbody>
+		</table> -->
+	<div ng-controller="myController">
+		<div>
+			<table border="1" width="600">
+			<thead>
+				<th>Display Name</th>
+				<th>url</th>
+				<th>game</th>
+				<th>views</th>
+			</thead>
+		    <tr ng-repeat="result in results_streams">
+		       <td>{{result.stream.channel.display_name}}</td>
+		       <td>{{result.stream.channel.url}}</td>
+		       <td>{{result.stream.channel.game}}</td>
+		       <td>{{result.stream.channel.views}}</td>
+		    </tr>
+		    </table>
+		</div>
+		<hr>
+		<div>
+			<table border="1" width="600">
+			<thead>
+				<th>Display Name</th>
+				<th>url</th>
+				<th>game</th>
+				<th>views</th>
+			</thead>
+		    <tr ng-repeat="result in results_channel">
+		       <td>{{result.display_name}}</td>
+		       <td>{{result.url}}</td>
+		       <td>{{result.game}}</td>
+		       <td>{{result.views}}</td>
+		    </tr>
+		    </table>
+		</div>
+	</div>
+</body>
+<html>
